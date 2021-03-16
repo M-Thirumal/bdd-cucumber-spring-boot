@@ -13,7 +13,10 @@ import io.cucumber.junit.CucumberOptions;
  *
  */
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources")
-public class CucumberIntegrationTest {
+//@CucumberContextConfiguration
+//@SpringBootTest(classes = { BddCucumberSpringBootApplication.class,
+//		CucumberIntegrationTest.class }, webEnvironment = WebEnvironment.DEFINED_PORT)
+@CucumberOptions(plugin = { "pretty" }, features = "src/test/resources")
+public class CucumberIntegrationTest extends SpringIntegrationTest {
 
 }

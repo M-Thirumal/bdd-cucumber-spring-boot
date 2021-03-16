@@ -16,10 +16,8 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
 Feature: Retrive Hello world
  
-  @tag1
   Scenario: client makes call to GET /hello
     Given I want to write a step with precondition
 #    And some other precondition

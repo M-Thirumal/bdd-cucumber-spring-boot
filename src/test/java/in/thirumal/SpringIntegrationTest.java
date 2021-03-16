@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.HttpMethod;
@@ -15,13 +14,13 @@ import org.springframework.web.client.RestTemplate;
 import io.cucumber.spring.CucumberContextConfiguration;
 
 @CucumberContextConfiguration
-@SpringBootTest(classes = BddCucumberSpringBootApplication.class, webEnvironment = WebEnvironment.DEFINED_PORT)
+@SpringBootTest(classes = { BddCucumberSpringBootApplication.class }, webEnvironment = WebEnvironment.DEFINED_PORT)
 public class SpringIntegrationTest {
 
 	static ResponseResults latestResponse = null;
 
-    @Autowired
-    protected RestTemplate restTemplate;
+//    @Autowired
+    protected RestTemplate restTemplate = new RestTemplate();
 
     void executeGet(String url) throws IOException {
         final Map<String, String> headers = new HashMap<>();
